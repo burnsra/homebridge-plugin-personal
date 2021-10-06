@@ -1,0 +1,81 @@
+{
+    "pluginAlias": "PersonalHomebridgePlugin",
+    "pluginType": "platform",
+    "singular": true,
+    "headerDisplay": "Optional content to display above the plugin config. Supports markdown.",
+    "footerDisplay": "Optional content to display below the plugin config. Supports markdown.",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "debug": {
+                "title": "Enable debugging",
+                "type": "boolean",
+                "default": false
+            },
+            "devices": {
+                "title": "Accessories",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "title": "Accessory Name",
+                            "type": "string",
+                            "required": true
+                        },
+                        "type": {
+                            "title": "Accessory Type",
+                            "type": "string",
+                            "default":"Light",
+                            "oneOf": [
+                                {
+                                    "title": "Light",
+                                    "enum": [
+                                        "Light"
+                                    ]
+                                },
+                                {
+                                    "title": "Switch",
+                                    "enum": [
+                                        "Switch"
+                                    ]
+                                }
+                            ],
+                            "required": true
+                        },
+                        "contact": {
+                            "title": "Include Contact Sensor",
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                }
+            }
+        },
+        "layout": [
+            {
+                "items": [
+                    {
+                        "key": "debug"
+                    }
+                ]
+            },
+            {
+                "items": [
+                    {
+                        "key": "accessories",
+                        "items": [
+                            {
+                                "items": [
+                                    "accessories[].name",
+                                    "accessories[].accessoryType",
+                                    "accessories[].accessoryContact"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

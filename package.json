@@ -1,0 +1,36 @@
+{
+  "displayName": "Personal Homebridge Plugin",
+  "name": "homebridge-plugin-personal",
+  "version": "1.0.3",
+  "description": "A personal plugin used for dummy accessories",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/burnsra/homebridge-plugin-personal.git"
+  },
+  "dependencies": {
+    "homebridge-framework": ">=1.3.0",
+    "node-persist": "^2.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/burnsra/homebridge-plugin-personal/issues"
+  },
+  "engines": {
+    "node": ">=16.10.0",
+    "homebridge": ">=1.3.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "npm link && nodemon"
+  },
+  "keywords": [
+    "homebridge",
+    "homebridge-plugin",
+    "personal"
+  ],
+  "devDependencies": {
+    "@types/node": "latest",
+    "homebridge": "latest",
+    "nodemon": "latest"
+  }
+}
